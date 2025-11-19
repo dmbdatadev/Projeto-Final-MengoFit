@@ -1,0 +1,454 @@
+* {
+    box-sizing: border-box;
+}
+
+/* Cores do site  */
+
+:root {
+    --cor-principal: #000000; 
+    --cor-secundaria: #FF0000; 
+    --cor-acento: #FFC72C; 
+    --cor-fundo: #ffffff; 
+    --cor-texto-claro: #ffffff; 
+    --cor-texto-escuro: #333333; 
+}
+
+/* Base e Layout */
+
+html, body {
+    overflow-x: hidden; 
+    width: 100%;
+    max-width: 100%; 
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    box-sizing: border-box; 
+    max-width: 100%; 
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--cor-fundo);
+    margin: 0;
+    padding: 0;
+    color: var(--cor-texto-escuro);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap; 
+}
+
+/* Cabeçalho */
+
+header {
+    background-color: var(--cor-principal);
+    color: var(--cor-texto-claro);
+    padding: 15px 20px;
+    border-bottom: 4px solid var(--cor-secundaria);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    color: var(--cor-secundaria);
+}
+
+.pos-cabecalho {
+    color: var(--cor-secundaria);
+    font-size: 0.9em;
+    font-style: italic;
+    opacity: 0.8;
+    margin-top: 5px;
+}
+
+/* Estilo da logo no Header */
+
+.logo-area {
+    display: flex; 
+    align-items: center;
+    gap: 10px; 
+}
+
+.site-logo {
+    height: 40px; 
+    width: auto;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    color: var(--cor-secundaria);
+}
+
+/* Ajuste para que a logo fique visivelmente melhor em telas menores */
+
+@media (max-width: 500px) {
+    .logo-area {
+        justify-content: center; 
+        width: 100%;
+    }
+    
+    .site-logo {
+        height: 35px; 
+    }
+    
+    header h1 {
+        font-size: 2em;
+    }
+}
+
+/* Navegação */
+
+nav#navegacao ul {
+    list-style: none;
+    text-transform: uppercase;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+}
+
+nav#navegacao a {
+    color: var(--cor-texto-claro);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 0;
+    transition: color 0.3s, border-bottom 0.3s;
+}
+
+nav#navegacao a:hover {
+    color: var(--cor-acento);
+    border-bottom: 2px solid var(--cor-acento);
+}
+
+/* Banner Principal */
+
+.hero-banner {
+    width: 100%;
+    overflow: hidden;
+    border-top: 4px solid var(--cor-secundaria);
+}
+
+.hero-banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* Conteúdo Principal (Seções) */
+
+.secao-principal {
+    flex: 3; 
+    min-width: 300px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.secao-principal h2, .secao-principal h3 {
+    color: var(--cor-principal);
+    border-bottom: 2px solid var(--cor-secundaria);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Vídeo do YouTube */
+
+.video-container {
+    overflow: hidden;
+    padding-top: 56.25%; 
+    position: relative;
+    margin-bottom: 30px;
+    max-width: 100%;
+    height: 0;
+}
+
+.video-container iframe {
+    border: 3px solid var(--cor-secundaria);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Planos */
+
+.plano-card {
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    border-left: 5px solid var(--cor-secundaria);
+    transition: transform 0.2s;
+}
+
+.plano-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.plano-card h4 {
+    color: var(--cor-principal);
+    margin-top: 0;
+}
+
+.planos-figure {
+    margin: 30px 0 0;
+    text-align: center;
+    border: none;
+    box-shadow: none;
+}
+
+.planos-figure img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.planos-figure figcaption {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 10px;
+}
+
+/* Calculadora */
+
+aside.calculadora {
+    flex: 1; 
+    min-width: 250px;
+    background-color: #eaf6ff; 
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+aside.calculadora h2 {
+    color: var(--cor-principal);
+    margin-top: 0;
+    border-bottom: 2px solid var(--cor-secundaria);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Formulário da Calculadora */
+
+#formIMC label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    color: var(--cor-principal);
+}
+
+#formIMC input[type="number"], 
+#formIMC select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; 
+}
+
+#formIMC button {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-texto-claro);
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+#formIMC button:hover {
+    background-color: var(--cor-acento);
+}
+
+/* Resultado IMC */
+
+.resultado-box {
+    margin-top: 25px;
+    padding: 15px;
+    border: 2px dashed var(--cor-principal);
+    border-radius: 6px;
+    font-weight: bold;
+    text-align: center;
+    background-color: var(--cor-texto-claro);
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Rodapé */
+
+footer#contato {
+    background-color: var(--cor-principal);
+    color: var(--cor-texto-claro);
+    padding: 30px 20px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.footer-content a {
+    color: var(--cor-acento);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-content a:hover {
+    color: var(--cor-secundaria);
+    text-decoration: underline;
+}
+
+.footer-content p {
+    margin: 5px 0;
+}
+
+.copyright, .desenvolvedor {
+    font-size: 0.8em;
+    opacity: 0.7;
+    margin-top: 15px;
+}
+
+/* Media para responsividade */
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column; 
+    }
+
+    .secao-principal, aside.calculadora {
+        flex: auto;
+        width: 100%;
+        min-width: auto;
+    }
+
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header h1 {
+        margin-bottom: 5px;
+    }
+
+    nav#navegacao ul {
+        justify-content: center;
+        margin-top: 15px;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 500px) {
+    nav#navegacao ul {
+        flex-direction: column; 
+        gap: 8px;
+        align-items: center;
+    }
+}
+
+/* Estilos do Carrossel */
+
+.carousel-container {
+    width: 100%;
+    overflow: hidden; 
+    position: relative; 
+    border-top: 4px solid var(--cor-secundaria);
+    height: 500px; 
+}
+
+.carousel-track {
+    display: flex; 
+    transition: transform 0.5s ease-in-out; 
+    width: 100%; 
+    height: 100%; 
+    padding: 0; 
+    margin: 0; 
+}
+
+.carousel-slide {
+    min-width: 100%; 
+    box-sizing: border-box;
+    flex-shrink: 0; 
+    position: relative; 
+    height: 100%;
+    padding: 0;
+}
+
+.carousel-slide img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; 
+    display: block;
+    object-fit: cover; 
+}
+/* Ajuste para responsividade em telas maiores */
+@media (min-width: 1440px) {
+    .carousel-container {
+        height: 760px; 
+    }
+}
+
+/* Ajuste para responsividade em telsa menores (Celulares) */
+@media (max-width: 600px) {
+    .carousel-container {
+        height: 180px; 
+    }
+}
+
+
+/* Ajuste para responsividade em telas menores (Celulares) */
+@media (max-width: 600px) {
+    .carousel-slide {
+        padding-top: 35%; 
+    }
+}
+
+/* Estilos dos Pontos de Navegação (Dots) */
+.carousel-dots {
+    text-align: center;
+    padding: 10px 0;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+
+.dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 4px;
+    background-color: rgba(255, 255, 255, 0.5); 
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.dot.active {
+    background-color: var(--cor-secundaria); 
+    transform: scale(1.2);
+}
